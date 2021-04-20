@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-size: 14px;
+			}
+			body {
+				background-color: forestgreen;
+				color: white;
+				font-family: "Courier New", Courier, monospace;
+			}
+			h1 {
+				font-size: 2rem;
+			}
+			section {
+				border: 1px solid green;
+				padding: 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h1>Descendant Selector: article h2 {...}</h1>
+			<p>
+				Incluindo um espaço entre os 2 selectores. No caso abaixo
+				<strong>article h2 {...}</strong> seleciona os H2 descendentes de
+				article.
+			</p>
+			<xmp>
+                <h2>NOT SELECTED</h2>
+                <article>
+                    <h2>This heading will be selected</h2>
+                    <div>
+                        <h2>This heading will be selected</h2>
+                    </div>
+                </article>
+            </xmp>
+		</section>
+		<section>
+			<h1>Direct Child Selector: article > p {...}</h1>
+			<p>
+				Incluindo um " > " entre os 2 selectores. No caso abaixo
+				<strong>article > p {...}</strong> seleciona somente o P filho direto de
+				article.
+			</p>
+			<xmp>
+                <p>NOT SELECTED</p>
+                <article>
+                    <p>This paragraph will be selected</p>
+                    <div>
+                        <p>NOT SELECTED</p>
+                    </div>
+                </article>
+            </xmp>
+		</section>
+		<section>
+			<h1>General Sibling Selector: h2 ~ p {...}</h1>
+			<p>
+				Incluindo um " ˜ " entre os 2 selectores. No caso abaixo
+				<strong>h2 ~ p {...}</strong> seleciona os P que tem o mesmo Pai e são
+				irmãos de H2.
+			</p>
+			<xmp>
+                <p>NOT SELECTED</p>
+                <article>
+                    <p>NOT SELECTED</p>
+                    <h2>NOT SELECTED</h2>
+                    <p>This paragraph will be selected</p>
+                    <div>
+                        <p>NOT SELECTED</p>
+                    </div>
+                    <p>This paragraph will be selected</p>
+                </article>
+            </xmp>
+		</section>
+		<section>
+			<h1>Adjacent Sibling Selector: h2 + p {...}</h1>
+			<p>
+				Incluindo um " ˜ " entre os 2 selectores. No caso abaixo
+				<strong>h2 + p {...}</strong> seleciona os P irmão que vem imediatamente
+				após um H2.
+			</p>
+			<xmp>
+                <p>NOT SELECTED</p>
+                <article>
+                    <p>NOT SELECTED</p>
+                    <h2>NOT SELECTED</h2>
+                    <p>This paragraph will be selected</p>
+                    <div>
+                        <p>NOT SELECTED</p>
+                    </div>
+                    <p>This paragraph will be selected</p>
+                </article>
+            </xmp>
+		</section>
+	</body>
+</html>
